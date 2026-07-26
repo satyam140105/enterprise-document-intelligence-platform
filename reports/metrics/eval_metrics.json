@@ -1,0 +1,163 @@
+{
+  "retrieval_hit_rate": {
+    "metric": "retrieval_hit_rate",
+    "k": 5,
+    "value": 1.0,
+    "hits": 5,
+    "n": 5,
+    "details": [
+      {
+        "id": "q1",
+        "question": "What is the warranty period for manufacturing defects?",
+        "hit": true,
+        "relevant_document_ids": [
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18"
+        ],
+        "retrieved_document_ids": [
+          "0b7b18f8-81a4-4c83-a46a-77ddc955534d",
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18",
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ]
+      },
+      {
+        "id": "q2",
+        "question": "What is the meal allowance cap for employee travel?",
+        "hit": true,
+        "relevant_document_ids": [
+          "0b7b18f8-81a4-4c83-a46a-77ddc955534d"
+        ],
+        "retrieved_document_ids": [
+          "0b7b18f8-81a4-4c83-a46a-77ddc955534d",
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18",
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ]
+      },
+      {
+        "id": "q3",
+        "question": "How long are audit logs retained?",
+        "hit": true,
+        "relevant_document_ids": [
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ],
+        "retrieved_document_ids": [
+          "0b7b18f8-81a4-4c83-a46a-77ddc955534d",
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18",
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ]
+      },
+      {
+        "id": "q4",
+        "question": "What Policy ID is used for warranty claims?",
+        "hit": true,
+        "relevant_document_ids": [
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18"
+        ],
+        "retrieved_document_ids": [
+          "0b7b18f8-81a4-4c83-a46a-77ddc955534d",
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18",
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ]
+      },
+      {
+        "id": "q5",
+        "question": "Which file types are supported in v1?",
+        "hit": true,
+        "relevant_document_ids": [
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ],
+        "retrieved_document_ids": [
+          "0b7b18f8-81a4-4c83-a46a-77ddc955534d",
+          "59d5cfbe-bbe6-4579-ad01-35afe88e5e18",
+          "fa7684b8-4341-4a94-aa12-4389aba261a3"
+        ]
+      }
+    ]
+  },
+  "citation_coverage": {
+    "metric": "citation_coverage",
+    "value": 1.0,
+    "passed": 5,
+    "n": 5,
+    "details": [
+      {
+        "id": "q1",
+        "citation_count": 3,
+        "answer_mentions_citation": true,
+        "pass": true,
+        "mode": "extractive"
+      },
+      {
+        "id": "q2",
+        "citation_count": 3,
+        "answer_mentions_citation": true,
+        "pass": true,
+        "mode": "extractive"
+      },
+      {
+        "id": "q3",
+        "citation_count": 3,
+        "answer_mentions_citation": true,
+        "pass": true,
+        "mode": "extractive"
+      },
+      {
+        "id": "q4",
+        "citation_count": 3,
+        "answer_mentions_citation": true,
+        "pass": true,
+        "mode": "extractive"
+      },
+      {
+        "id": "q5",
+        "citation_count": 3,
+        "answer_mentions_citation": true,
+        "pass": true,
+        "mode": "extractive"
+      }
+    ]
+  },
+  "faithfulness_checklist": {
+    "metric": "faithfulness_checklist",
+    "value": 1.0,
+    "passed": 5,
+    "n": 5,
+    "details": [
+      {
+        "id": "q1",
+        "has_citations": true,
+        "non_empty_answer": true,
+        "not_hallucinated_empty_corpus": true,
+        "pass": true
+      },
+      {
+        "id": "q2",
+        "has_citations": true,
+        "non_empty_answer": true,
+        "not_hallucinated_empty_corpus": true,
+        "pass": true
+      },
+      {
+        "id": "q3",
+        "has_citations": true,
+        "non_empty_answer": true,
+        "not_hallucinated_empty_corpus": true,
+        "pass": true
+      },
+      {
+        "id": "q4",
+        "has_citations": true,
+        "non_empty_answer": true,
+        "not_hallucinated_empty_corpus": true,
+        "pass": true
+      },
+      {
+        "id": "q5",
+        "has_citations": true,
+        "non_empty_answer": true,
+        "not_hallucinated_empty_corpus": true,
+        "pass": true
+      }
+    ]
+  },
+  "corpus_note": "sample/public corpus \u2014 methodology demo, not production plant deployment"
+}
