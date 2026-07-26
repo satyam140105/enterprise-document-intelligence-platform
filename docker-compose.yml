@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - API_KEY=change-me
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/app/data
+    # Optional: add pgvector service for enterprise store path
+  # db:
+  #   image: pgvector/pgvector:pg16
+  #   environment:
+  #     POSTGRES_USER: docintel
+  #     POSTGRES_PASSWORD: docintel
+  #     POSTGRES_DB: docintel
+  #   ports:
+  #     - "5432:5432"
