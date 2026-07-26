@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>90s Demo Recorder — DocIntel</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    html,body{margin:0;height:100%;background:#0F172A;color:#F8FAFC;font-family:"IBM Plex Sans",sans-serif;overflow:hidden}
+    .slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:6vw;
+      background:radial-gradient(ellipse at 15% 10%,rgba(14,116,144,.35),transparent 45%),#0F172A}
+    .slide.active{display:flex}
+    .eyebrow{color:#67E8F9;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;font-weight:600;margin-bottom:1rem}
+    h1{font-family:"IBM Plex Serif",Georgia,serif;font-size:clamp(2rem,4.5vw,3.2rem);max-width:16ch;margin:0 0 1rem;line-height:1.15}
+    p{font-size:clamp(1.1rem,2vw,1.4rem);color:#CBD5E1;max-width:34ch}
+    .metrics{font-family:"IBM Plex Mono",monospace;font-size:clamp(1.3rem,3vw,2rem);color:#67E8F9;margin-top:1rem}
+    .progress{position:fixed;left:0;bottom:0;height:4px;background:#0E7490;width:0%}
+    img.arch{max-width:min(880px,80vw);margin-top:1.2rem;border:1px solid #334155}
+  </style>
+</head>
+<body>
+  <div class="slide active" data-sec="8"><div class="eyebrow">Released</div><h1>Enterprise Document Intelligence Platform</h1><p>Mohammad Ahmadian · Applied AI / LLM Engineer</p></div>
+  <div class="slide" data-sec="12"><div class="eyebrow">Problem</div><h1>Documents you can ask</h1><p>Semantic search and cited answers — not keyword-only search.</p></div>
+  <div class="slide" data-sec="15"><div class="eyebrow">Architecture</div><h1>IDP pipeline</h1><p>Ingest → extract → chunk → embed → retrieve → cite → API</p><img class="arch" src="../architecture/architecture-diagram.png" alt="Architecture" /></div>
+  <div class="slide" data-sec="18"><div class="eyebrow">Results</div><h1>Eval harness</h1><div class="metrics">Hit-rate 1.00 · Citation 1.00 · Checklist 1.00</div><p style="margin-top:1rem">Sample corpus — methodology demo</p></div>
+  <div class="slide" data-sec="17"><div class="eyebrow">API</div><h1>/v1/ask with citations</h1><p>Also ingest, search, extract · OpenAPI docs</p></div>
+  <div class="slide" data-sec="10"><div class="eyebrow">Honesty</div><h1>Public sample corpus</h1><p>github.com/ahmadian-dev · extractive answers by default</p></div>
+  <div class="progress" id="bar"></div>
+  <script>
+    const slides=[...document.querySelectorAll(".slide")];
+    let i=0,t0=performance.now(),total=slides.reduce((s,el)=>s+(+el.dataset.sec)*1000,0);
+    function show(n){slides.forEach((s,idx)=>s.classList.toggle("active",idx===n));i=n}
+    setInterval(()=>{const e=performance.now()-t0;document.getElementById("bar").style.width=Math.min(100,(e/total)*100)+"%";let a=0;for(let k=0;k<slides.length;k++){a+=(+slides[k].dataset.sec)*1000;if(e<a){if(i!==k)show(k);return}}show(slides.length-1)},100);
+  </script>
+</body>
+</html>

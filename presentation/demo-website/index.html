@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enterprise Document Intelligence Platform — Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#F7F8FA; --elev:#fff; --ink:#0F172A; --muted:#475569; --line:#E2E8F0; --accent:#0E7490; --code:#0B1220; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"IBM Plex Sans",system-ui,sans-serif; background:var(--bg); color:var(--ink); }
+    .hero {
+      min-height:100vh; padding:2.5rem 6vw 4rem; color:#F8FAFC;
+      display:flex; flex-direction:column; justify-content:center;
+      background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(15,23,42,.8)),
+        radial-gradient(ellipse at 20% 20%, rgba(14,116,144,.35), transparent 50%), #0F172A;
+      position:relative;
+    }
+    .hero::before {
+      content:""; position:absolute; inset:0;
+      background-image:linear-gradient(rgba(248,250,252,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(248,250,252,.04) 1px, transparent 1px);
+      background-size:48px 48px; pointer-events:none;
+    }
+    .inner { position:relative; max-width:1100px; }
+    .status { display:inline-block; font-size:.75rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
+      color:#A7F3D0; border:1px solid #059669; padding:.2rem .55rem; margin-bottom:1.25rem; }
+    .brand { font-family:"IBM Plex Serif",Georgia,serif; font-size:clamp(2.2rem,5vw,3.4rem); font-weight:600; margin-bottom:.6rem; }
+    .title { font-size:clamp(1.1rem,2vw,1.4rem); color:#E2E8F0; max-width:40ch; margin-bottom:1rem; }
+    .lede { color:#94A3B8; max-width:52ch; margin-bottom:1.75rem; }
+    .btn { display:inline-block; text-decoration:none; font-weight:600; padding:.7rem 1.1rem; margin-right:.5rem; }
+    .p { background:var(--accent); color:#fff; }
+    .g { border:1px solid #64748B; color:#E2E8F0; }
+    section { padding:4rem 6vw; max-width:1100px; margin:0 auto; }
+    h2 { font-family:"IBM Plex Serif",Georgia,serif; font-size:1.7rem; margin-bottom:.5rem; }
+    .sub { color:var(--muted); margin-bottom:1.5rem; }
+    .kpis { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    @media(max-width:800px){ .kpis{grid-template-columns:1fr;} }
+    .kpi { background:var(--elev); border:1px solid var(--line); padding:1.1rem; }
+    .kpi .l { font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+    .kpi .v { font-family:"IBM Plex Mono",monospace; font-size:1.7rem; color:var(--accent); margin-top:.25rem; }
+    .flow { display:flex; flex-wrap:wrap; gap:.45rem; font-family:"IBM Plex Mono",monospace; font-size:.8rem; }
+    .flow span { background:#ECFEFF; color:var(--accent); border:1px solid #A5F3FC; padding:.35rem .55rem; }
+    pre { background:var(--code); color:#E2E8F0; padding:1.1rem; overflow:auto; font-family:"IBM Plex Mono",monospace; font-size:.82rem; }
+    footer { border-top:1px solid var(--line); padding:2rem 6vw 3rem; color:var(--muted); font-size:.9rem; }
+    footer a { color:var(--accent); }
+    ul { margin-left:1.1rem; color:var(--muted); }
+    li { margin:.35rem 0; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="inner">
+      <div class="status">Released · Portfolio Demo</div>
+      <p class="brand">Mohammad Ahmadian</p>
+      <h1 class="title">Enterprise Document Intelligence Platform</h1>
+      <p class="lede">Enterprise-Grade Intelligent Document Processing — OCR/text extraction, semantic search, RAG with citations, and structured field extraction.</p>
+      <a class="btn p" href="../dashboard/index.html">Performance Dashboard</a>
+      <a class="btn g" href="../architecture/architecture.html">Architecture</a>
+      <a class="btn g" href="../../README.md">README</a>
+    </div>
+  </header>
+  <section>
+    <h2>Pipeline</h2>
+    <p class="sub">Custom RAG orchestration — not a prompt wrapper.</p>
+    <div class="flow">
+      <span>Ingest PDF/TXT</span><span>Extract</span><span>Chunk</span><span>Embed</span><span>Retrieve</span><span>Cite</span><span>FastAPI</span>
+    </div>
+  </section>
+  <section>
+    <h2>Evaluation snapshot</h2>
+    <p class="sub">Metrics written after real eval runs — see reports/EVALUATION_REPORT.md</p>
+    <div class="kpis" id="kpis">
+      <div class="kpi"><div class="l">Retrieval hit-rate</div><div class="v" id="m1">—</div></div>
+      <div class="kpi"><div class="l">Citation coverage</div><div class="v" id="m2">—</div></div>
+      <div class="kpi"><div class="l">Faithfulness checklist</div><div class="v" id="m3">—</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Integrity</h2>
+    <ul>
+      <li>Answers include citation structures (chunk IDs)</li>
+      <li>Sample/public corpus only — not a production plant archive</li>
+      <li>Extractive grounded mode by default; optional LLM via API key</li>
+      <li>Same portfolio DNA as Predictive Maintenance platform</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Run</h2>
+    <pre>set PYTHONPATH=src
+python scripts/build_index_and_eval.py
+uvicorn docintel.api.main:app --app-dir src --port 8000
+# http://localhost:8000/docs</pre>
+  </section>
+  <footer>
+    <strong>Mohammad Ahmadian</strong> — AI / Machine Learning Engineer · Turkey (GMT+3)<br />
+    <a href="mailto:mohammad.ahmadian.dev@gmail.com">mohammad.ahmadian.dev@gmail.com</a> · github.com/ahmadian-dev
+  </footer>
+  <script>
+    fetch("../../reports/metrics/eval_metrics.json").then(r => r.json()).then(d => {
+      document.getElementById("m1").textContent = d.retrieval_hit_rate.value.toFixed(3);
+      document.getElementById("m2").textContent = d.citation_coverage.value.toFixed(3);
+      document.getElementById("m3").textContent = d.faithfulness_checklist.value.toFixed(3);
+    }).catch(() => {});
+  </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Enterprise Document Intelligence Platform
 
-![Status](https://img.shields.io/badge/status-design_phase-yellow)
+![Status](https://img.shields.io/badge/status-released-brightgreen)
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
@@ -8,70 +8,66 @@
 
 Enterprise-Grade Intelligent Document Processing System powered by OCR, NLP and Large Language Models.
 
-> **Status:** Design Phase · Version 1.0 · Scope Frozen · Current Phase: Software Design  
-> Implementation has not started. Specs live under [`docs/`](docs/00_MASTER_INDEX.md).
+> Hiring managers: [Demo Website](presentation/demo-website/index.html) · [Dashboard](presentation/dashboard/index.html) · [Architecture](presentation/architecture/architecture.html) · [Presentation pack](presentation/README.md)
 
 ## Recruiter snapshot
 
 | Item | Detail |
 |------|--------|
 | Domain | Intelligent Document Processing (IDP) |
-| Focus | OCR · document understanding · extraction · semantic search · RAG Q&A with citations |
+| Capabilities | Ingest · extract · chunk · embed · semantic search · RAG with citations · field extraction |
 | Target roles | Applied AI Engineer · LLM Engineer |
-| Stack direction | Python · FastAPI · PostgreSQL/pgvector · HF embeddings · custom RAG · Docker |
-| Docs | Full engineering pack `docs/00`–`28` (same DNA as Project 1) |
+| Serving | FastAPI `/v1/ingest` · `/v1/search` · `/v1/ask` · `/v1/extract` |
+| Integrity | Citations required · sample corpus · extractive default (optional LLM) |
 
-## What this platform will do
+### Evaluation (sample corpus)
 
-1. Ingest enterprise documents (PDF / TXT)  
-2. Extract text (digital-first; OCR path for scans)  
-3. Chunk → embed → store in pgvector  
-4. Semantic search + citation-oriented RAG answers  
-5. Configurable structured field extraction  
-6. Evaluation harness (retrieval + answer quality checks)  
-7. FastAPI delivery with OpenAPI docs  
+| Metric | Value |
+|--------|------:|
+| Retrieval hit-rate @5 | **1.000** |
+| Citation coverage | **1.000** |
+| Faithfulness checklist | **1.000** |
 
-## Documentation
+Full report: [`reports/EVALUATION_REPORT.md`](reports/EVALUATION_REPORT.md)
 
-Start here: [`docs/00_MASTER_INDEX.md`](docs/00_MASTER_INDEX.md) · [`docs/status.md`](docs/status.md)
+## Architecture
 
-| Notable docs | Purpose |
-|--------------|---------|
-| `01` PRD | Problem, goals, non-goals |
-| `03` Architecture | System design |
-| `10` API | Contract |
-| `13` Document Processing Pipeline | IDP-specific (replaces classic FE doc from Project 1) |
-| `28` Cursor Master Prompt | Implementation sessions |
+![System architecture (Released)](presentation/architecture/architecture-diagram.png)
 
-## Repository layout (target)
+*Figure 1. System architecture (Released).*
 
-```text
-src/docintel/   ingestion · ocr · chunking · embeddings · retrieval · generation · evaluation · api
-configs/        default.yaml
-docs/           design pack (Ready)
-presentation/   demo · architecture · dashboard · video · hiring copy (after implementation)
-data/           raw / processed (gitignored content)
-tests/          pytest
-```
-
-## Quick start (after implementation)
+## Quick start
 
 ```bash
 python -m venv .venv
-# Windows
 .venv\Scripts\activate
 pip install -r requirements.txt
+
 set PYTHONPATH=src
+python scripts/build_index_and_eval.py
 uvicorn docintel.api.main:app --app-dir src --host 0.0.0.0 --port 8000
+# http://localhost:8000/docs
 ```
 
-## Portfolio DNA
+### Example ask
 
-This repository follows the same standards as **Production ML Platform for Predictive Maintenance**:
+```bash
+curl -s -X POST http://localhost:8000/v1/ask ^
+  -H "Content-Type: application/json" ^
+  -d "{\"question\":\"What is the warranty period?\"}"
+```
 
-- Same `/docs` numbering (with Project-2 swap: `13_DOCUMENT_PROCESSING_PIPELINE`)  
-- Same repo hygiene, README pattern, demo/presentation pack pattern  
-- Same packaging and Git conventional-commit discipline  
+## Documentation
+
+[`docs/00_MASTER_INDEX.md`](docs/00_MASTER_INDEX.md) · Status: [`docs/status.md`](docs/status.md)
+
+Doc 13 is **Document Processing Pipeline** (IDP-specific; same numbering DNA as Project 1).
+
+## Limitations (honest)
+
+- Public/sample corpus — not a customer production archive  
+- Default answers are **extractive** unless `LLM_API_KEY` is set  
+- Local vector store for demo/CI; Postgres/pgvector path documented for enterprise Compose  
 
 ## Contact
 
