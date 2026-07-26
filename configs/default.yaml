@@ -1,0 +1,40 @@
+# Enterprise Document Intelligence Platform — default config
+# Design Phase — implement after docs are approved
+
+project:
+  display_name: Enterprise Document Intelligence Platform
+  name: enterprise-document-intelligence-platform
+  package: docintel
+  version: 1.0.0
+  status: design_phase
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  supported_formats: [pdf, txt]
+  # Dataset choice locked in docs/11_DATASET_STRATEGY.md
+
+processing:
+  ocr_mode: digital_first  # digital_first | ocr_fallback
+  chunk_size: 512
+  chunk_overlap: 64
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+
+retrieval:
+  top_k: 5
+  similarity_metric: cosine
+
+generation:
+  citation_required: true
+  max_context_chunks: 5
+
+api:
+  max_upload_mb: 20
+  max_batch_size: 32
+
+mlflow:
+  experiment_name: document-intelligence
+
+evaluation:
+  primary_metric: retrieval_hit_rate
+  secondary_metrics: [citation_coverage, faithfulness_checklist]

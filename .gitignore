@@ -1,0 +1,43 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Env & secrets
+.env
+.env.local
+*.pem
+
+# Data & models
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/artifacts/*
+!models/artifacts/.gitkeep
+!models/artifacts/production/
+!models/artifacts/production/**
+*.pkl
+*.pt
+*.onnx
+*.h5
+
+# MLflow
+mlflow.db
+mlruns/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
