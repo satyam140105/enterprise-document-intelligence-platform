@@ -1,0 +1,23 @@
+# Product warranty policy — sample corpus (public portfolio demo)
+
+Policy ID: POL-2048-WX
+Effective Date: 2024-01-15
+
+Warranty Period: 24 months from the date of purchase for manufacturing defects.
+
+Coverage:
+- Hardware failure under normal use
+- Replacement of defective components
+- Software patches related to covered defects
+
+Exclusions:
+- Damage from misuse or liquid exposure
+- Unauthorized modifications
+- Consumable parts after normal wear
+
+Claims Process:
+1. Contact support with Policy ID POL-2048-WX
+2. Provide proof of purchase
+3. Allow remote diagnostics before RMA
+
+Support contact: support@example-portfolio.demo

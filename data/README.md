@@ -1,11 +1,26 @@
 # Dataset placement — Enterprise Document Intelligence Platform
 
-## Design Phase
+## Sample corpus (committed)
 
-Dataset choice is locked in `docs/11_DATASET_STRATEGY.md`.
+| File | Theme |
+|------|--------|
+| `data/samples/warranty_policy.txt` | Warranty / policy ID |
+| `data/samples/expense_policy.txt` | HR expense policy |
+| `data/samples/technical_faq.txt` | Technical FAQ |
 
-Do **not** commit proprietary customer documents.
+## Eval set
 
-Place sample public/corpus files under `data/raw/` after download scripts are implemented.
+`data/eval/queries.json` — labeled questions with `relevant_filenames`.
 
-Supported v1 formats: PDF, TXT.
+## Rebuild index
+
+```bash
+set PYTHONPATH=src
+python scripts/build_index_and_eval.py
+```
+
+Index files under `data/processed/index/` are gitignored / regenerable.
+
+## License / honesty
+
+Portfolio sample documents authored for demo. Not customer data. Not a production plant archive.

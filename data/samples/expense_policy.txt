@@ -1,0 +1,16 @@
+# Employee expense policy — sample corpus (public portfolio demo)
+
+Policy ID: HR-EXP-331
+Effective Date: March 1, 2025
+
+Employees may submit expenses for pre-approved business travel.
+Meal allowance is capped at $75 per day.
+Lodging requires receipts for amounts above $120 per night.
+
+Invoice Total example for training materials: $1,250.00
+
+Approval chain:
+- Manager for amounts under $500
+- Finance for amounts of $500 or more
+
+Expense reports must be filed within 14 days of travel completion.

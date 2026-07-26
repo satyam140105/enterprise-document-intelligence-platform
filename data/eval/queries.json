@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the warranty period for manufacturing defects?",
+    "relevant_document_ids": [],
+    "relevant_filenames": ["warranty_policy.txt"]
+  },
+  {
+    "id": "q2",
+    "question": "What is the meal allowance cap for employee travel?",
+    "relevant_document_ids": [],
+    "relevant_filenames": ["expense_policy.txt"]
+  },
+  {
+    "id": "q3",
+    "question": "How long are audit logs retained?",
+    "relevant_document_ids": [],
+    "relevant_filenames": ["technical_faq.txt"]
+  },
+  {
+    "id": "q4",
+    "question": "What Policy ID is used for warranty claims?",
+    "relevant_document_ids": [],
+    "relevant_filenames": ["warranty_policy.txt"]
+  },
+  {
+    "id": "q5",
+    "question": "Which file types are supported in v1?",
+    "relevant_document_ids": [],
+    "relevant_filenames": ["technical_faq.txt"]
+  }
+]

@@ -1,0 +1,13 @@
+# Technical FAQ — sample corpus (public portfolio demo)
+
+Q: What is the default retention period for audit logs?
+A: Audit logs are retained for 365 days unless a longer legal hold is applied.
+
+Q: How is semantic search implemented in this demo platform?
+A: Documents are chunked, embedded with sentence-transformers, and retrieved by cosine similarity.
+
+Q: Does the platform invent answers without sources?
+A: No. Answers must cite retrieved chunk identifiers. Without an LLM API key, answers are extractive.
+
+Q: What file types are supported in v1?
+A: PDF with a text layer and plain TXT files. Scanned OCR is optional and best-effort.
