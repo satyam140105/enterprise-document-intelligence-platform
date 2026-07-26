@@ -70,10 +70,11 @@
     <h2>Evaluation snapshot</h2>
     <p class="sub">Metrics written after real eval runs — see reports/EVALUATION_REPORT.md</p>
     <div class="kpis" id="kpis">
-      <div class="kpi"><div class="l">Retrieval hit-rate</div><div class="v" id="m1">—</div></div>
-      <div class="kpi"><div class="l">Citation coverage</div><div class="v" id="m2">—</div></div>
-      <div class="kpi"><div class="l">Faithfulness checklist</div><div class="v" id="m3">—</div></div>
+      <div class="kpi"><div class="l">Retrieval Hit Rate @5</div><div class="v" id="m1">1.00</div></div>
+      <div class="kpi"><div class="l">Citation Coverage</div><div class="v" id="m2">1.00</div></div>
+      <div class="kpi"><div class="l">Faithfulness</div><div class="v" id="m3">1.00</div></div>
     </div>
+    <p class="sub" style="margin-top:0.75rem">Source: reports/metrics/eval_metrics.json (sample corpus eval).</p>
   </section>
   <section>
     <h2>Integrity</h2>
@@ -95,12 +96,5 @@ uvicorn docintel.api.main:app --app-dir src --port 8000
     <strong>Mohammad Ahmadian</strong> — AI / Machine Learning Engineer · Turkey (GMT+3)<br />
     <a href="mailto:mohammad.ahmadian.dev@gmail.com">mohammad.ahmadian.dev@gmail.com</a> · github.com/ahmadian-dev
   </footer>
-  <script>
-    fetch("../../reports/metrics/eval_metrics.json").then(r => r.json()).then(d => {
-      document.getElementById("m1").textContent = d.retrieval_hit_rate.value.toFixed(3);
-      document.getElementById("m2").textContent = d.citation_coverage.value.toFixed(3);
-      document.getElementById("m3").textContent = d.faithfulness_checklist.value.toFixed(3);
-    }).catch(() => {});
-  </script>
 </body>
 </html>
