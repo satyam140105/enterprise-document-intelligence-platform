@@ -1,1 +1,1 @@
-﻿"""Package module — implement after Design Phase.""
+"""Package module."""
