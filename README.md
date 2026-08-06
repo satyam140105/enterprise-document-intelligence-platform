@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.11+-blue)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-**Mohammad Ahmadian — AI / Machine Learning Engineer**
+**Satyam Swain — AI / Machine Learning Engineer**
 
 Enterprise-Grade Intelligent Document Processing System powered by OCR, NLP and Large Language Models.
 
@@ -71,7 +71,7 @@ Doc 13 is **Document Processing Pipeline** (IDP-specific; same numbering DNA as 
 
 ## Contact
 
-mohammad.ahmadian.dev@gmail.com · [github.com/ahmadian-dev](https://github.com/ahmadian-dev) · Turkey (GMT+3)
+satyamswain.dev@gmail.com · [github.com/satyamswain](https://github.com/satyamswain)
 
 ## License
 

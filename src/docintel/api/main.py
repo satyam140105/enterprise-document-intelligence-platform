@@ -68,7 +68,7 @@ app = FastAPI(
     description=(
         "Enterprise-grade intelligent document processing for OCR/text extraction, "
         "semantic search, RAG Q&A with citations, and structured field extraction. "
-        "Portfolio project by Mohammad Ahmadian — Applied AI / LLM Engineer."
+        "Portfolio project by Satyam Swain — Applied AI / LLM Engineer."
     ),
     version=__version__,
     lifespan=lifespan,

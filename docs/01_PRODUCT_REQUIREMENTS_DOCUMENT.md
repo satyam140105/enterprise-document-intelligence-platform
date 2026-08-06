@@ -5,7 +5,7 @@
 | Product name | Enterprise Document Intelligence Platform |
 | Status | Ready (Design Phase) |
 | Version | 1.0 |
-| Author | Mohammad Ahmadian |
+| Author | Satyam Swain |
 | Date | 2026-07-26 |
 | Scope | Frozen |
 | Current Phase | Software Design |

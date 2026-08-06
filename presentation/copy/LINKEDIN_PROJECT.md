@@ -33,5 +33,5 @@ Stack: Python · FastAPI · sentence-transformers · custom RAG · MLflow · Doc
 
 Limitations documented: public/sample corpus; not a production plant archive.
 
-GitHub: github.com/ahmadian-dev/enterprise-document-intelligence-platform
+GitHub: github.com/satyamswain/enterprise-document-intelligence-platform
 ```

@@ -5,7 +5,7 @@
 | Project | Enterprise Document Intelligence Platform |
 | Package | `docintel` |
 | Repo | `enterprise-document-intelligence-platform` |
-| Owner | Mohammad Ahmadian |
+| Owner | Satyam Swain |
 | Docs status | **Ready** |
 | Project status | **Released** (see `docs/status.md`) |
 | Version | 1.0 |

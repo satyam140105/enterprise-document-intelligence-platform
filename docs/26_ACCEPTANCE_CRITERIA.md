@@ -72,7 +72,7 @@
 
 | Role | Name | Date | OK? |
 |------|------|------|-----|
-| Author | Mohammad Ahmadian | 2026-07-26 | **Released** — implementation + presentation complete |
+| Author | Satyam Swain | 2026-07-26 | **Released** — implementation + presentation complete |
 
 ## 9. Decisions locked
 

@@ -32,6 +32,7 @@ models/artifacts/*
 
 # MLflow
 mlflow.db
+*.db-journal
 mlruns/
 
 # IDE / OS

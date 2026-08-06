@@ -106,7 +106,7 @@ git tag -a v0.1.0 -m "Release v0.1.0 — enterprise document intelligence platfo
 
 ## 8. Remote
 
-Expected GitHub remote: `ahmadian-dev/enterprise-document-intelligence-platform` (confirm when pushing).
+Expected GitHub remote: `satyamswain/enterprise-document-intelligence-platform` (confirm when pushing).
 
 ## 9. Decisions locked
 

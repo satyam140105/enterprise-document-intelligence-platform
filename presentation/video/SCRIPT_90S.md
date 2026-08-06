@@ -8,7 +8,7 @@
 
 | Time | Caption |
 |------|---------|
-| 0:00–0:08 | Mohammad Ahmadian · Enterprise Document Intelligence Platform · Released |
+| 0:00–0:08 | Satyam Swain · Enterprise Document Intelligence Platform · Released |
 | 0:08–0:20 | Problem: search & answer over documents with citations |
 | 0:20–0:35 | Pipeline: ingest → extract → chunk → embed → retrieve → cite |
 | 0:35–0:55 | Results: hit-rate / citation / faithfulness (see dashboard) |

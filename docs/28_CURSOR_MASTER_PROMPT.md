@@ -15,7 +15,7 @@ You are implementing the portfolio project:
 Enterprise Document Intelligence Platform
 Repo: enterprise-document-intelligence-platform
 Package: docintel
-Owner: Mohammad Ahmadian (AI / Machine Learning Engineer)
+Owner: Satyam Swain (AI / Machine Learning Engineer)
 Target roles: Applied AI Engineer, LLM Engineer
 README subtitle concept: Enterprise-Grade Intelligent Document Processing System powered by OCR, NLP and Large Language Models
 
